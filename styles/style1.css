@@ -1,0 +1,155 @@
+:root {
+    --green-color: #04aa6d;
+    --white-color: #ffffff;
+    --black-color: #282a35;
+    --blue-color: #32a4e6;
+    --snow-white: #f1f1f1;
+    --light-grey: #e7e9eb;
+    --grey: #dddddd;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lucida Sans", Verdana;
+    margin: 20px;
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
+}
+
+h1, header p {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+header {
+    background-color: var(--green-color);
+    color: var(--white-color);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+nav, section, aside {
+    width: 100%;
+}
+
+.column {
+    float: left;
+    padding-right: 15px;
+    padding-top: 10px;
+}
+
+main::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    background-color: var(--snow-white);
+    margin-bottom: 5px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+}
+
+nav ul li:hover:not(.active) { 
+    background-color: var(--white-color);
+}
+
+nav ul li a { 
+    text-decoration: none;
+    color: var(--black-color);
+    display: block;
+    padding: 10px;
+}
+
+nav ul li a:hover { 
+    color: var(--black-color);
+}
+
+nav ul li a.active { 
+    background-color: var(--green-color);
+    color: var(--white-color);
+    font-weight: bold;
+}
+
+section a {
+    color: var(--black-color);
+}
+
+section a:hover {
+    text-decoration: none;
+    color: var(--black-color);
+}
+
+aside {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: var(--snow-white);
+    padding: 10px;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+
+    nav {
+        width: 25%;
+    }
+
+    section { 
+        width: 75%;
+    }
+
+    aside {
+        width: 100%;
+    }
+}
+
+ @media only screen and (min-width: 768px) {
+  /* For desktop: */
+
+    nav, aside {
+    width: 25%;
+    }
+
+    section { 
+        width: 50%;
+    }
+    
+} 

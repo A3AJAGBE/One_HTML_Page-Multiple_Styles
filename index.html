@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools - CSS Demo</title>
+    <link rel="stylesheet" href="styles/style1.css">
+    <link rel="stylesheet" href="styles/style2.css">
+    <link rel="stylesheet" href="styles/style3.css">
+    <link rel="stylesheet" href="styles/style4.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to My Homepage</h1>
+        <p>Use the menu to select different stylesheets</p>
+    </header>
+
+    <main>
+        <nav class="column">
+            <ul>
+                <li><a href="#" onclick="pageStyle(0)" class="navLink active">Stylesheet 1</a></li>
+                <li><a href="#" onclick="pageStyle(1)" class="navLink">Stylesheet 2</a></li>
+                <li><a href="#" onclick="pageStyle(2)" class="navLink">Stylesheet 3</a></li>
+                <li><a href="#" onclick="pageStyle(3)" class="navLink">Stylesheet 4</a></li>
+                <li><a href="#" onclick="noStyle()">No Stylesheet</a></li>
+            </ul>
+        </nav>
+
+        <section class=" column">
+            <h2>Same Page Different Stylesheets</h2>
+            <p>This is a demonstration of how different stylesheets can change the layout of your HTML page.
+                You can
+                change the layout of this page by selecting different stylesheets in the menu, or by
+                selecting one of
+                the following links: <br>
+                <a href="#" onclick="pageStyle(0);return false">Stylesheet1</a>,
+                <a href="#" onclick="pageStyle(1);return false">Stylesheet2</a>,
+                <a href="#" onclick="pageStyle(2);return false">Stylesheet3</a>,
+                <a href="#" onclick="pageStyle(3);return false">Stylesheet4</a>.
+            </p>
+
+            <h3>No Styles</h3>
+            <p>This page uses DIV elements to group different sections of the HTML page. Click here to see
+                how the page
+                looks like with no stylesheet: <br>
+                <a href="#" onclick="noStyle();return false">No Stylesheet</a>.</p>
+        </section>
+
+        <aside class="column">
+            <h4>Side-Bar</h4>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                tincidunt ut
+                laoreet dolore magna aliquam erat volutpat.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+            suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
+            vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+            accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
+            nulla facilisi.</p>
+    </footer>
+
+    <script>
+        function noStyle() {
+            document.styleSheets[0].disabled = true;
+            document.styleSheets[1].disabled = true;
+            document.styleSheets[2].disabled = true;
+            document.styleSheets[3].disabled = true;
+        }
+
+        function pageStyle(n) {
+            noStyle()
+            document.styleSheets[n].disabled = false;
+        }
+
+        pageStyle(0);
+
+        // Get all nav links
+        let navLinks = document.getElementsByClassName("navLink");
+
+        // Loop through the navlinks and add active class to clicked navlink
+        for (let i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener("click", function () {
+                let current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+</body>
+
+</html>

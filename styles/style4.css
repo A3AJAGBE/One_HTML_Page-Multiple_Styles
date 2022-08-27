@@ -1,0 +1,117 @@
+:root {
+    --neon-color: #84c754;
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Courier New";
+    background-color: var(--black-color);
+    color: var(--neon-color);
+    padding: 30px;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h1, header p{
+    margin: 0;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+p {
+    line-height: 1.6;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* flex-direction: column; */
+}
+
+nav {
+    padding: 20px;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    margin: 8px;
+}
+
+nav ul li a {
+    color: var(--neon-color);
+    text-decoration: none;
+}
+
+section a:hover {
+    color: var(--neon-color);
+}
+
+
+nav ul li a:hover, section a {
+    color: var(--white-color);
+}
+
+.active {
+    color: var(--white-color);
+    font-weight: bold;
+}
+
+aside {
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+footer {
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+    padding: 10px;
+    text-align: center;
+    font-size: 11px;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+
+    nav {
+        order: 1;
+        flex: 60%;
+    }
+
+    aside {
+        order: 2;
+        flex: 20%;
+    }
+
+    section {
+        order: 3;
+        flex: 100%;
+    }
+    
+}
