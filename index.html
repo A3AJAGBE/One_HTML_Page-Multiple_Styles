@@ -36,10 +36,10 @@
                 change the layout of this page by selecting different stylesheets in the menu, or by
                 selecting one of
                 the following links: <br>
-                <a href="#" onclick="pageStyle(0);return false">Stylesheet1</a>,
-                <a href="#" onclick="pageStyle(1);return false">Stylesheet2</a>,
-                <a href="#" onclick="pageStyle(2);return false">Stylesheet3</a>,
-                <a href="#" onclick="pageStyle(3);return false">Stylesheet4</a>.
+                <a href="#" onclick="pageStyle(0);return false" class="secLink">Stylesheet1</a>,
+                <a href="#" onclick="pageStyle(1);return false" class="secLink">Stylesheet2</a>,
+                <a href="#" onclick="pageStyle(2);return false" class="secLink">Stylesheet3</a>,
+                <a href="#" onclick="pageStyle(3);return false" class="secLink">Stylesheet4</a>.
             </p>
 
             <h3>No Styles</h3>
@@ -84,12 +84,24 @@
         // Get all nav links
         let navLinks = document.getElementsByClassName("navLink");
 
-        // Loop through the navlinks and add active class to clicked navlink
+        // Loop through the nav links and add active class to clicked nav link
         for (let i = 0; i < navLinks.length; i++) {
             navLinks[i].addEventListener("click", function () {
                 let current = document.getElementsByClassName("active");
                 current[0].className = current[0].className.replace(" active", "");
                 this.className += " active";
+            });
+        }
+
+        // Get all section links
+        let secLinks = document.getElementsByClassName("secLink");
+
+        // Loop through the section links and add active class to clicked nav link
+        for (let i = 0; i < secLinks.length; i++) {
+            secLinks[i].addEventListener("click", function () {
+                let current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                navLinks[i].className += " active";
             });
         }
     </script>
